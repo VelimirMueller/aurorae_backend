@@ -10,5 +10,5 @@ import org.acme.Greeting
 class GreetingResource {
 
     @GET
-    fun hello() = Greeting("hello")
+    fun hello() = Greeting("Hello visitor, welcome to the aurorae world!")
 }

@@ -15,7 +15,7 @@ class GreetingResourceTest {
           .`when`().get("/hello")
           .then()
              .statusCode(200)
-             .body("message", equalTo("hello"))
+             .body("message", equalTo("Hello visitor, welcome to the aurorae world!"))
     }
 
 }
