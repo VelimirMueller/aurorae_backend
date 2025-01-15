@@ -18,4 +18,13 @@ class GreetingResourceTest {
              .body("message", equalTo("Hello visitor, welcome to the aurorae world!"))
     }
 
+    @Test
+    fun testHelloPostEndpoint() {
+        given()
+          .`when`().post("/hello")
+          .then()
+             .statusCode(200)
+             .body("message", equalTo("Hello visitor, welcome to the aurorae world! - post api"))
+    }
+
 }
