@@ -14,5 +14,5 @@
 
 | Endpoint | Method | Auth needed? | Description |
 | -------- | -------- | ------- | ------- |
-| `/admin` |  GET | - [x] | Protected endpoint to access Aurorae dashboard. |
+| `/admin` |  GET | yes | Protected endpoint to access Aurorae dashboard. |
 
