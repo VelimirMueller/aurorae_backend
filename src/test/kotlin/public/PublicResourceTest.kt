@@ -1,4 +1,4 @@
-package org.acme
+package public
 
 import io.quarkus.test.junit.QuarkusTest
 import io.restassured.RestAssured.given
@@ -24,7 +24,7 @@ class PublicResourceTest {
           .`when`().post("/public")
           .then()
              .statusCode(200)
-             .body("message", equalTo("Hello visitor, welcome to the aurorae world! - post api"))
+             .body("message", equalTo("Hello visitor, welcome to the aurorae world from public post api"))
     }
 
 }

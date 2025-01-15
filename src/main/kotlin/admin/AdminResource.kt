@@ -8,12 +8,12 @@ import jakarta.ws.rs.core.MediaType
 import org.acme.Greeting
 import jakarta.annotation.security.PermitAll
 
-@Path("/public")
-class PublicResource {
+@Path("/admin")
+class AdminResource {
 
     @GET
-    fun public() = Greeting("Hello visitor, welcome to the aurorae world!")
+    fun admin() = Greeting("Hello admin")
 
     @POST
-    fun publicPost() = Greeting("Hello visitor, welcome to the aurorae world from public post api")
+    fun helloPost() = Greeting("Hello from admin api")
 }
