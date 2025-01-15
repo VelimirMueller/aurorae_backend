@@ -8,23 +8,13 @@ import org.hamcrest.Matchers.equalTo
 
 @QuarkusTest
 class GreetingResourceTest {
-
-    @Test
-    fun testHelloEndpoint() {
-        given()
-          .`when`().get("/hello")
-          .then()
-             .statusCode(200)
-             .body("message", equalTo("Hello visitor, welcome to the aurorae world!"))
-    }
-
     @Test
     fun testHelloPostEndpoint() {
         given()
           .`when`().post("/hello")
           .then()
              .statusCode(200)
-             .body("message", equalTo("Hello visitor, welcome to the aurorae world! - post api"))
+             .body("message", equalTo("Hello visitor, welcome to the Aurorae Project."))
     }
 
 }

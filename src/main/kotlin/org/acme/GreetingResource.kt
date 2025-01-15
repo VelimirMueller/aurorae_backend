@@ -9,10 +9,6 @@ import org.acme.Greeting
 
 @Path("/hello")
 class GreetingResource {
-
-    @GET
-    fun hello() = Greeting("Hello visitor, welcome to the aurorae world!")
-
     @POST
-    fun helloPost() = Greeting("Hello visitor, welcome to the aurorae world! - post api")
+    fun helloPost() = Greeting("Hello visitor, welcome to the Aurorae Project.")
 }
