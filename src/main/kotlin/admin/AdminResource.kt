@@ -1,4 +1,4 @@
-package public
+package admin
 
 import jakarta.ws.rs.GET
 import jakarta.ws.rs.POST
@@ -15,5 +15,5 @@ class AdminResource {
     fun admin() = Greeting("Hello admin")
 
     @POST
-    fun helloPost() = Greeting("Hello from admin api")
+    fun adminPost() = Greeting("Hello from admin api")
 }
