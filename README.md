@@ -10,3 +10,9 @@
 | `/public` | POST | no | Provides data for the landing page. |
 | `/hello` | POST | no | A greeting api endpoint - just for fun! |
 
+### admin dashboard
+
+| Endpoint | Method | Auth needed? | Description |
+| -------- | -------- | ------- | ------- |
+| `/admin` |  GET | - [x] | Protected endpoint to access Aurorae dashboard. |
+
