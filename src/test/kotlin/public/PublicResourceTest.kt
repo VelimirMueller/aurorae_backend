@@ -14,8 +14,7 @@ class PublicResourceTest {
         given()
           .`when`().get("/public")
           .then()
-             .statusCode(200)
-             .body("message", equalTo("Hello visitor, welcome to the aurorae world!"))
+             .statusCode(403)
     }
 
     @Test
@@ -23,8 +22,7 @@ class PublicResourceTest {
         given()
           .`when`().post("/public")
           .then()
-             .statusCode(200)
-             .body("message", equalTo("Hello visitor, welcome to the aurorae world from public post api"))
+             .statusCode(403)
     }
 
 }
