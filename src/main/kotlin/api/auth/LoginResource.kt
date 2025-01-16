@@ -7,10 +7,10 @@ import jakarta.ws.rs.Produces
 import jakarta.ws.rs.core.MediaType
 import org.acme.Greeting
 import jakarta.annotation.security.PermitAll
-import jakarta.annotation.security.RolesAllowed
 
 @Path("/api/v1/login")
 class LoginResource {
     @POST
+    @PermitAll
     fun loginPost() = Greeting("Hello user, you are now logged in.")
 }

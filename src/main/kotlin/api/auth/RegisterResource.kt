@@ -9,11 +9,11 @@ import jakarta.ws.rs.core.MediaType
 import jakarta.ws.rs.core.Response
 import org.acme.Greeting
 import jakarta.annotation.security.PermitAll
-import jakarta.annotation.security.RolesAllowed
 
 @Path("/api/v1/register")
 class RegisterResource {
     @POST
+    @PermitAll
     @Consumes(MediaType.APPLICATION_JSON)
     @Produces(MediaType.APPLICATION_JSON)
     fun registerPost(data: Map<String, Any>): Response {
