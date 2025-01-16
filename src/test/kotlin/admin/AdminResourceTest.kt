@@ -14,8 +14,7 @@ class AdminResourceTest {
         given()
           .`when`().get("/admin")
           .then()
-             .statusCode(200)
-             .body("message", equalTo("Hello admin"))
+             .statusCode(403)
     }
 
     @Test
@@ -23,8 +22,7 @@ class AdminResourceTest {
         given()
           .`when`().post("/admin")
           .then()
-             .statusCode(200)
-             .body("message", equalTo("Hello from admin api"))
+            .statusCode(403)
     }
 
 }
