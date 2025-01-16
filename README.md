@@ -16,3 +16,11 @@
 | -------- | -------- | ------- | ------- |
 | `/admin` |  GET | yes | Protected endpoint to access Aurorae dashboard. |
 
+### authentication API
+
+| Endpoint | Method | Auth needed? | Description | payload |
+| -------- | -------- | ------- | ------- | ------- |
+| `/api/v1/login` |  POST | no | Accessible endpoint to login as existing user. | `{emailAddress: string, password: string}` |
+| `/api/v1/register` |  POST | no | Accessible endpoint to login as existing user. | `{username: string, emailAddress: string, password: string}, passwordRepeat: string` |
+
+
