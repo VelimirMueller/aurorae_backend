@@ -6,7 +6,6 @@ import jakarta.ws.rs.Path
 import jakarta.ws.rs.Produces
 import jakarta.ws.rs.core.MediaType
 import org.acme.Greeting
-import jakarta.annotation.security.PermitAll
 import jakarta.annotation.security.RolesAllowed
 
 @Path("/api/v1/admin")
