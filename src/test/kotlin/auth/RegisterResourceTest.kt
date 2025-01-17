@@ -32,7 +32,7 @@ class RegisterResourceTest {
     @Test
     fun testRegisterEndpointWithoutContentType () {
         given()
-            .body("{\"username\": \"username_unique\", \"password\": \"password\", \"passwordRepeat\": \"password\", \"email\": \"emai1_uniquel\"}")
+            .body("{\"userName\": \"username_unique\", \"password\": \"password\", \"passwordRepeat\": \"password\", \"emailAddress\": \"emai1_uniquel\"}")
           .`when`().post("/api/v1/register")
           .then()
              .statusCode(415)
@@ -54,7 +54,7 @@ class RegisterResourceTest {
     fun testRegisterEndpointWithValidDataButEmailAdressExist() {
         given()
             .contentType("application/json")
-            .body("{\"username\": \"username22\", \"password\": \"password\", \"passwordRepeat\": \"password\", \"email\": \"email\"}")
+            .body("{\"userName\": \"username22\", \"password\": \"password\", \"passwordRepeat\": \"password\", \"emailAddress\": \"email\"}")
           .`when`().post("/api/v1/register")
           .then()
              .statusCode(400)
@@ -65,7 +65,7 @@ class RegisterResourceTest {
     fun testRegisterEndpointWithValidDataButUsernameExist() {
         given()
             .contentType("application/json")
-            .body("{\"username\": \"username\", \"password\": \"password\", \"passwordRepeat\": \"password\", \"email\": \"emai12l\"}")
+            .body("{\"userName\": \"username\", \"password\": \"password\", \"passwordRepeat\": \"password\", \"emailAddress\": \"emai12l\"}")
           .`when`().post("/api/v1/register")
           .then()
              .statusCode(400)
@@ -76,7 +76,7 @@ class RegisterResourceTest {
     fun testRegisterEndpointWithValidDataAndUniqueValues() {
         given()
             .contentType("application/json")
-            .body("{\"username\": \"username_unique\", \"password\": \"password\", \"passwordRepeat\": \"password\", \"email\": \"emai1_uniquel\"}")
+            .body("{\"userName\": \"username_unique\", \"password\": \"password\", \"passwordRepeat\": \"password\", \"emailAddress\": \"emai1_uniquel\"}")
           .`when`().post("/api/v1/register")
           .then()
              .statusCode(200)

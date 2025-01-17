@@ -21,17 +21,17 @@ class RegisterResource {
     @Produces(MediaType.APPLICATION_JSON)
     fun registerPost(data: Map<String, Any>?): Response {
         // return early if no data is provided
-        if(data == null || data.isEmpty()) {
+        if(data == null) {
             return Response.status(Response.Status.BAD_REQUEST)
                 .entity(Greeting("Please provide data in a valid format."))
                 .build()
         }
 
-
+        
         val password = data["password"] as? String ?: ""
         val passwordRepeat = data["passwordRepeat"] as? String ?: ""
-        val email = data["email"] as? String ?: ""
-        val username = data["username"] as? String ?: ""
+        val email = data["emailAddress"] as? String ?: ""
+        val username = data["userName"] as? String ?: ""
         
         // check if some field is empty
         if (passwordRepeat == "" || password == "" || email == "" || username == "") {
