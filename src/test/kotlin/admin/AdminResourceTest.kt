@@ -8,19 +8,10 @@ import org.hamcrest.Matchers.equalTo
 
 @QuarkusTest
 class AdminResourceTest {
-
-    @Test
-    fun testAdminEndpoint() {
-        given()
-          .`when`().get("/admin")
-          .then()
-             .statusCode(403)
-    }
-
     @Test
     fun testAdminPostEndpoint() {
         given()
-          .`when`().post("/admin")
+          .`when`().post("/api/v1/admin")
           .then()
             .statusCode(403)
     }

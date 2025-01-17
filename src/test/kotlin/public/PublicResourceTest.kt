@@ -10,17 +10,9 @@ import org.hamcrest.Matchers.equalTo
 class PublicResourceTest {
 
     @Test
-    fun testPublicEndpoint() {
-        given()
-          .`when`().get("/public")
-          .then()
-             .statusCode(403)
-    }
-
-    @Test
     fun testPublicPostEndpoint() {
         given()
-          .`when`().post("/public")
+          .`when`().post("/api/v1/public")
           .then()
              .statusCode(403)
     }

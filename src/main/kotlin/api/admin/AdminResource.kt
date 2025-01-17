@@ -9,14 +9,11 @@ import org.acme.Greeting
 import jakarta.annotation.security.PermitAll
 import jakarta.annotation.security.RolesAllowed
 
-@Path("/admin")
+@Path("/api/v1/admin")
 class AdminResource {
-
-    @GET
-    @RolesAllowed("admin")
-    fun admin() = Greeting("Hello admin")
 
     @POST
     @RolesAllowed("admin")
     fun adminPost() = Greeting("Hello from admin api")
 }
+

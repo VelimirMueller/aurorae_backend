@@ -12,18 +12,55 @@ import jakarta.annotation.security.PermitAll
 
 @Path("/api/v1/register")
 class RegisterResource {
+    private val existingEmails: List<String> = listOf("email")
+    private val existingUsernames: List<String> = listOf("username")
+
     @POST
     @PermitAll
     @Consumes(MediaType.APPLICATION_JSON)
     @Produces(MediaType.APPLICATION_JSON)
-    fun registerPost(data: Map<String, Any>): Response {
+    fun registerPost(data: Map<String, Any>?): Response {
+        // return early if no data is provided
+        if(data == null || data.isEmpty()) {
+            return Response.status(Response.Status.BAD_REQUEST)
+                .entity(Greeting("Please provide data in a valid format."))
+                .build()
+        }
+
+
+        val password = data["password"] as? String ?: ""
+        val passwordRepeat = data["passwordRepeat"] as? String ?: ""
+        val email = data["email"] as? String ?: ""
+        val username = data["username"] as? String ?: ""
+        
+        // check if some field is empty
+        if (passwordRepeat == "" || password == "" || email == "" || username == "") {
+            return Response.status(Response.Status.BAD_REQUEST)
+                .entity(Greeting("Please provide all required fields."))
+                .build()
+        }
+
         // Check if passwords match
-        if (data.get("password") != data.get("passwordRepeat")) {
+        if (password != passwordRepeat) {
             return Response.status(Response.Status.BAD_REQUEST)
                 .entity(Greeting("Passwords do not match."))
                 .build()
         }
 
-        return Response.ok(Greeting("Hello user, we recceived following data: $data for the register endpoint")).build()
+        // check if email is unique
+        if (existingEmails.contains(email)) {
+            return Response.status(Response.Status.BAD_REQUEST)
+                .entity(Greeting("Email address already exists."))
+                .build()
+        }
+
+        // check if username is unique
+        if (existingUsernames.contains(username)) {
+            return Response.status(Response.Status.BAD_REQUEST)
+                .entity(Greeting("Username already exists."))
+                .build()
+        }
+
+        return Response.ok(Greeting("User registered.")).build()
     }
 }

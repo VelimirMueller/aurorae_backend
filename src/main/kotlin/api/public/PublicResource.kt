@@ -8,12 +8,8 @@ import jakarta.ws.rs.core.MediaType
 import org.acme.Greeting
 import jakarta.annotation.security.RolesAllowed
 
-@Path("/public")
+@Path("/api/v1/public")
 class PublicResource {
-
-    @GET
-    @RolesAllowed("user")
-    fun public() = Greeting("Hello visitor, welcome to the aurorae world!")
 
     @POST
     @RolesAllowed("user")
