@@ -14,13 +14,11 @@
 
 | Endpoint | Method | Content Type | Auth needed? | Description |
 | -------- | -------- | ------- | ------- | ------- |
-| -------- | -------- | ------- | ------- |
 | `/admin` |  GET | `application/json` | yes | Protected endpoint to access Aurorae dashboard. |
 
 ### authentication API
 
 | Endpoint | Method | Content Type | Auth needed? | Description |
-| -------- | -------- | ------- | ------- | ------- |
 | -------- | -------- | ------- | ------- | ------- |
 | `/api/v1/login` |  POST | `application/json` | no | Accessible endpoint to login as existing user. | `{emailAddress: string, password: string}` |
 | `/api/v1/register` |  POST | `application/json` | no | Accessible endpoint to login as existing user. | `{username: string, emailAddress: string, password: string}, passwordRepeat: string` |
