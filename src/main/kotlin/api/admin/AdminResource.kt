@@ -1,4 +1,4 @@
-package admin
+package api.admin
 
 import jakarta.ws.rs.GET
 import jakarta.ws.rs.POST
