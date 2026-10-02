@@ -74,6 +74,10 @@ Aurorae Backend is a RESTful API service that handles user authentication, regis
    | `DB_PASSWORD` | *(none)* | Postgres password — required to connect |
    | `DB_URL` | `jdbc:postgresql://localhost:5432/aurorae` | JDBC URL |
 
+   In dev and test mode the password defaults to empty so tests run without a database. In the `prod` profile it has no default: if `DB_PASSWORD` is unset, Quarkus stops at startup with `SRCFG00011: Could not expand value DB_PASSWORD`.
+
+   > **Security note:** before 2026-10-02 a database password was committed in `application.properties`. It is still in git history and must be treated as leaked: never use it for any database, and rotate it wherever it was used.
+
 3. **Run in development mode** (with live reload)
 
    ```bash
@@ -106,6 +110,7 @@ Aurorae Backend is a RESTful API service that handles user authentication, regis
 
 ```bash
 docker build -f src/main/docker/Dockerfile.jvm -t aurorae-backend .
+export DB_PASSWORD='<your-db-password>'   # required: the prod profile refuses to start without it
 docker run -i --rm -p 8080:8080 \
   -e DB_PASSWORD -e DB_URL=jdbc:postgresql://host.docker.internal:5432/aurorae \
   aurorae-backend
