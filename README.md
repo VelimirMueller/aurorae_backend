@@ -60,7 +60,21 @@ Aurorae Backend is a RESTful API service that handles user authentication, regis
    cd aurorae_backend
    ```
 
-2. **Run in development mode** (with live reload)
+2. **Configure the database**
+
+   Credentials come from the environment, never from the repo. For local dev, copy the template and set your own password:
+
+   ```bash
+   cp .env.example .env   # .env is git-ignored
+   ```
+
+   | Variable | Default | Purpose |
+   |---|---|---|
+   | `DB_USERNAME` | `pgsql_admin` | Postgres user |
+   | `DB_PASSWORD` | *(none)* | Postgres password — required to connect |
+   | `DB_URL` | `jdbc:postgresql://localhost:5432/aurorae` | JDBC URL |
+
+3. **Run in development mode** (with live reload)
 
    ```bash
    ./mvnw quarkus:dev
@@ -68,7 +82,7 @@ Aurorae Backend is a RESTful API service that handles user authentication, regis
 
    The application will be available at `http://localhost:8080`.
 
-3. **Run tests**
+4. **Run tests**
 
    ```bash
    ./mvnw test
@@ -92,7 +106,9 @@ Aurorae Backend is a RESTful API service that handles user authentication, regis
 
 ```bash
 docker build -f src/main/docker/Dockerfile.jvm -t aurorae-backend .
-docker run -i --rm -p 8080:8080 aurorae-backend
+docker run -i --rm -p 8080:8080 \
+  -e DB_PASSWORD -e DB_URL=jdbc:postgresql://host.docker.internal:5432/aurorae \
+  aurorae-backend
 ```
 
 ## API Reference
