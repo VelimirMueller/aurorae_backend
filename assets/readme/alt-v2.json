@@ -1,0 +1,17 @@
+{
+  "divider-what-v2.svg": "01 WHAT IT DOES. FRONT DOOR. ALSO THE CASH REGISTER.",
+  "divider-start-v2.svg": "02 QUICK START. TWO FILES. BOTH ARE GOOD.",
+  "divider-how-v2.svg": "03 HOW IT WORKS. WHO CHECKS WHOM, IN ORDER.",
+  "divider-usage-v2.svg": "04 USAGE. SHORT, LIKE THE REPO.",
+  "divider-status-v2.svg": "05 STATUS. MOSTLY PLANS. CLEARLY LABELLED.",
+  "stats-v2-dark.svg": "0 LOGIN FORMS WRITTEN HERE. 1 ENTITLEMENTS TABLE FROM STRIPE. 3 CALLERS: STUDIO, WIDGETS, SDK. E2 REWRITE EPIC ON THE MAP",
+  "stats-v2-light.svg": "0 LOGIN FORMS WRITTEN HERE. 1 ENTITLEMENTS TABLE FROM STRIPE. 3 CALLERS: STUDIO, WIDGETS, SDK. E2 REWRITE EPIC ON THE MAP",
+  "features-v2-dark.svg": "WHO GETS IN: Organisations, roles and entitlements, owned here. Zitadel v4 does the login: OIDC, passkeys, MFA. WHAT THEY PAID FOR: Stripe events become one entitlements table. The paywall reads that table. WHO ASKS: Studio, widgets and SDK apps call this service. It answers with identity events on the NATS bus",
+  "features-v2-light.svg": "WHO GETS IN: Organisations, roles and entitlements, owned here. Zitadel v4 does the login: OIDC, passkeys, MFA. WHAT THEY PAID FOR: Stripe events become one entitlements table. The paywall reads that table. WHO ASKS: Studio, widgets and SDK apps call this service. It answers with identity events on the NATS bus",
+  "start-v2-dark.svg": "Terminal: $ gh repo clone VelimirMueller/synthwerk-identity | $ cd synthwerk-identity | $ ls | LICENSE  README.md | # the code is the rewrite. epic E2.",
+  "start-v2-light.svg": "Terminal: $ gh repo clone VelimirMueller/synthwerk-identity | $ cd synthwerk-identity | $ ls | LICENSE  README.md | # the code is the rewrite. epic E2.",
+  "flow-v2-dark.svg": "CLIENTS -> IDENTITY -> ZITADEL V4 -> POSTGRES · NATS. Stripe webhooks come in. One entitlements table comes out.",
+  "flow-v2-light.svg": "CLIENTS -> IDENTITY -> ZITADEL V4 -> POSTGRES · NATS. Stripe webhooks come in. One entitlements table comes out.",
+  "status-v2-dark.svg": "Rewrite (epic E2 Identity): planned. main branch: skeleton, no code. legacy-final tag: Kotlin/Quarkus prototype. Login: Zitadel v4: OIDC, passkeys, MFA. Branching: dev, stg by tag, prd by digest",
+  "status-v2-light.svg": "Rewrite (epic E2 Identity): planned. main branch: skeleton, no code. legacy-final tag: Kotlin/Quarkus prototype. Login: Zitadel v4: OIDC, passkeys, MFA. Branching: dev, stg by tag, prd by digest"
+}
