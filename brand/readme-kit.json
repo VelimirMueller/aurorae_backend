@@ -1,0 +1,44 @@
+{
+  "group": "flagship",
+  "version": "v2",
+  "dividers": [
+    {"key": "what",   "index": "01", "title": "WHAT IT DOES", "caption": "FRONT DOOR. ALSO THE CASH REGISTER.", "art": "strip-flagship-1"},
+    {"key": "start",  "index": "02", "title": "QUICK START",  "caption": "TWO FILES. BOTH ARE GOOD.",            "art": "strip-flagship-2"},
+    {"key": "how",    "index": "03", "title": "HOW IT WORKS", "caption": "WHO CHECKS WHOM, IN ORDER.",          "art": "strip-flagship-3"},
+    {"key": "usage",  "index": "04", "title": "USAGE",        "caption": "SHORT, LIKE THE REPO.",               "art": "strip-flagship-4"},
+    {"key": "status", "index": "05", "title": "STATUS",       "caption": "MOSTLY PLANS. CLEARLY LABELLED.",     "art": "strip-flagship-5"}
+  ],
+  "panels": [
+    {"key": "stats", "type": "stats", "title": "IDENTITY IN NUMBERS", "items": [
+      {"value": "0", "label": "LOGIN FORMS WRITTEN HERE"},
+      {"value": "1", "label": "ENTITLEMENTS TABLE FROM STRIPE"},
+      {"value": "3", "label": "CALLERS: STUDIO, WIDGETS, SDK"},
+      {"value": "E2", "label": "REWRITE EPIC ON THE MAP"}
+    ]},
+    {"key": "features", "type": "cards", "title": "WHO, WHAT, FOR WHOM", "items": [
+      {"title": "WHO GETS IN", "text": "Organisations, roles and entitlements, owned here. Zitadel v4 does the login: OIDC, passkeys, MFA."},
+      {"title": "WHAT THEY PAID FOR", "text": "Stripe events become one entitlements table. The paywall reads that table."},
+      {"title": "WHO ASKS", "text": "Studio, widgets and SDK apps call this service. It answers with identity events on the NATS bus."}
+    ]},
+    {"key": "start", "type": "terminal", "title": "QUICK START", "lines": [
+      "$ gh repo clone VelimirMueller/synthwerk-identity",
+      "$ cd synthwerk-identity",
+      "$ ls",
+      "LICENSE  README.md",
+      "# the code is the rewrite. epic E2."
+    ]},
+    {"key": "flow", "type": "flow", "title": "ONE LOGIN, LEFT TO RIGHT", "nodes": [
+      {"title": "CLIENTS", "sub": "studio, widgets, sdk"},
+      {"title": "IDENTITY", "sub": "orgs, roles, paywall", "hot": true},
+      {"title": "ZITADEL V4", "sub": "OIDC, passkeys, MFA"},
+      {"title": "POSTGRES · NATS", "sub": "state + identity events"}
+    ], "caption": "Stripe webhooks come in. One entitlements table comes out."},
+    {"key": "status", "type": "status", "title": "WHAT EXISTS TODAY", "rows": [
+      {"label": "Rewrite (epic E2 Identity)", "value": "planned", "state": "planned"},
+      {"label": "main branch", "value": "skeleton, no code", "state": "wip"},
+      {"label": "legacy-final tag", "value": "Kotlin/Quarkus prototype", "state": "off"},
+      {"label": "Login", "value": "Zitadel v4: OIDC, passkeys, MFA", "state": "planned"},
+      {"label": "Branching", "value": "dev, stg by tag, prd by digest", "state": "planned"}
+    ]}
+  ]
+}
