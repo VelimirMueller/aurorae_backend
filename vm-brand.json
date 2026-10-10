@@ -4,5 +4,8 @@
   "sublabel": "ORGS · ROLES · ENTITLEMENTS",
   "status": "REWRITE",
   "bannerVersion": "v2",
-  "art": {"file": "v2/synthwerk-identity.png", "seed": 318}
+  "art": {
+    "file": "v2/synthwerk-identity.png",
+    "seed": 318
+  }
 }
